@@ -1,0 +1,27 @@
+--cpu=Cortex-M4.fp.sp
+"project_g\startup_stm32f407xx.o"
+"project_g\main.o"
+"project_g\gpio.o"
+"project_g\stm32f4xx_it.o"
+"project_g\stm32f4xx_hal_msp.o"
+"project_g\stm32f4xx_hal_rcc.o"
+"project_g\stm32f4xx_hal_rcc_ex.o"
+"project_g\stm32f4xx_hal_flash.o"
+"project_g\stm32f4xx_hal_flash_ex.o"
+"project_g\stm32f4xx_hal_flash_ramfunc.o"
+"project_g\stm32f4xx_hal_gpio.o"
+"project_g\stm32f4xx_hal_dma_ex.o"
+"project_g\stm32f4xx_hal_dma.o"
+"project_g\stm32f4xx_hal_pwr.o"
+"project_g\stm32f4xx_hal_pwr_ex.o"
+"project_g\stm32f4xx_hal_cortex.o"
+"project_g\stm32f4xx_hal.o"
+"project_g\stm32f4xx_hal_exti.o"
+"project_g\system_stm32f4xx.o"
+"project_g\func.o"
+"project_g\ad9833.o"
+"../Middlewares/ST/ARM/DSP/Lib/arm_cortexM4lf_math.lib"
+--strict --scatter "project_G\project_G.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "project_G.map" -o project_G\project_G.axf
