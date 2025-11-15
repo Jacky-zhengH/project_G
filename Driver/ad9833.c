@@ -11,7 +11,7 @@
 
 /*端口定义 */
 #define PORT_FSYNC GPIOB
-#define PIN_FSYNC GPIO_PIN_12
+#define PIN_FSYNC GPIO_PIN_15
 
 #define PORT_SCK GPIOB
 #define PIN_SCK GPIO_PIN_14

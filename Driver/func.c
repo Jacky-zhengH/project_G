@@ -1,8 +1,27 @@
 #include "header.h"
 //*********************************************************************************************************
-#define DEVICE_MAX_VPP 3.0f // dds模块在AD9833_AmpSet(255)时可输出的最大幅值（需要实测修改）
-
+#define DEVICE_MAX_VPP 3.0f     // dds模块在AD9833_AmpSet(255)时可输出的最大幅值（需要实测修改）
+#define SWEEP_POINT 500         // 扫频点数，先设置为500个点
+#define SWEEP_FREQ_START 200.0f // 扫频起始频率 200Hz
+#define SWEEP_FREQ_STEP 200.0f  // 扫频法频率步长 设置为200Hz 扫频范围为200Hz~100KHz
+#define SWEEP_STAB_DELAY_ms 5   // 波形稳定延时时长
+#define SWEEP_AMP_SETTING 150   // 扫频时信号幅值（1~255）
 //*********************************************************************************************************
+static float Learning_Gain_Arry[SWEEP_POINT];
+//*********************************************************************************************************
+
+/**
+ * @name
+ * @brief
+ * @note
+ * @param
+ * @retval
+ */
+static FilterType FILTER_type_analysis(float *array, int POINT_VALUE)
+{
+    FilterType test = FILTER_HIGH_PASS;
+    return test;
+}
 /**
  * @name   Convert_Vpp_To_AmpValue(float vpp)
  * @brief  将物理电压Vpp转换为数字电位器的0-255设定值
@@ -10,7 +29,6 @@
  * @param  vpp: 探究装置需要输出的Vpp
  * @retval 0-255的幅度设定值
  */
-//*********************************************************************************************************
 static uint8_t Convert_Vpp_To_AmpValue(float vpp)
 {
     float amp_value_f;
@@ -30,7 +48,7 @@ static uint8_t Convert_Vpp_To_AmpValue(float vpp)
     amp_value_f = (vpp / DEVICE_MAX_VPP) * 255.0f;
     return (uint8_t)(amp_value_f + 0.5f); // 四舍五入转换为整数
 }
-//*********************************************************************************************************
+
 /**
  * @name    Calculate_KnownModel_Gain()
  * @brief  计算“已知模型电路” H(s) 在指定频率下的增益 |H(jω)|
@@ -38,12 +56,11 @@ static uint8_t Convert_Vpp_To_AmpValue(float vpp)
  * @param  freq_hz: 输入频率
  * @retval 幅度增益 (一个 0.0 到 1.0 之间的浮点数)
  */
-//*********************************************************************************************************
 static float Calculate_KnownModel_Gain(float freq_hz)
 {
     // 转换公式 H(jω) = 5 / ( (1 - 10^-8 * ω^2) + j(3*10^-4 * ω) )
     // 1.计算ω和ω^2的值
-    float w = 2.0 * PI * freq_hz;
+    float w = 2.0f * PI * freq_hz;
     float w2 = w * w;
     // 2. 计算分子幅值
     // |Num| = |5| = 5.0
@@ -65,7 +82,7 @@ static float Calculate_KnownModel_Gain(float freq_hz)
 
     return num_mag / den_mag;
 }
-//*********************************************************************************************************
+
 /**
  * @name   Func_Init(void)
  * @brief  初始化AD9833
@@ -73,7 +90,6 @@ static float Calculate_KnownModel_Gain(float freq_hz)
  * @param  无
  * @retval none
  */
-//*********************************************************************************************************
 void Func_Init(void)
 {
     // 不需要AD9833_Init()，已经在hal库初始化
@@ -81,7 +97,6 @@ void Func_Init(void)
     AD9833_AmpSet(0); // 数字电位器归零
 }
 
-//*********************************************************************************************************
 /**
  * @name   Func_Basic2_SetSignal
  * @brief  基础部分第二问：生成频率可调（最高不小于1MHZ，步长100Hz）的正弦信号
@@ -89,14 +104,12 @@ void Func_Init(void)
  * @param  frequence 频率
  * @retval none
  */
-//*********************************************************************************************************
 void Func_Basic2_SetSignal(float frequency)
 {
     AD9833_WaveSeting(frequency, 0, SIN_WAVE, 0);
     AD9833_AmpSet(255); // 数字电位器直接拉到最高，调整到最高幅值
 }
 
-//*********************************************************************************************************
 /**
  * @name   Fun_Basic3_4_SetSignal
  * @brief  基础部分第三,四问
@@ -105,8 +118,6 @@ void Func_Basic2_SetSignal(float frequency)
  * @param  target_model_output_vpp:指定输出幅值
  * @retval none
  */
-//*********************************************************************************************************
-
 void Func_Basic3_4_SetSignal(float frequency, float target_model_output_vpp)
 {
     // 1. 计算"已知模型"在 f 处的增益
@@ -130,4 +141,41 @@ void Func_Basic3_4_SetSignal(float frequency, float target_model_output_vpp)
     // 4. 设置硬件
     AD9833_WaveSeting((double)frequency, 0, SIN_WAVE, 0); // 设置频率
     AD9833_AmpSet(amp_value);                             // 设置计算出的幅度
+}
+
+/**
+ * @name   Fun_Advanced1_StratLearning(void)
+ * @brief  发挥部分第一问
+ * @note   使用扫频法，构建增益数组。然后再通过数据分析数组，判断类型
+ * @param
+ * @retval
+ */
+
+FilterType Fun_Advanced1_StratLearning(void)
+{
+    //
+    AD9833_AmpSet(SWEEP_AMP_SETTING);
+
+    for (int i = 0; i < SWEEP_POINT; i++)
+    {
+        float Sweep_Set_freq = SWEEP_FREQ_START + i * SWEEP_FREQ_STEP;
+        AD9833_WaveSeting((double)Sweep_Set_freq, 0, SIN_WAVE, 0);
+        HAL_Delay(SWEEP_STAB_DELAY_ms);
+
+        float V_in;
+        float V_out;
+
+        if (V_in < 0.01f)
+        {
+            Learning_Gain_Arry[i] = 0.0f;
+        }
+        else
+        {
+            Learning_Gain_Arry[i] = V_out / V_in;
+        }
+    }
+    AD9833_WaveSeting(0, 0, SIN_WAVE, 0);
+    AD9833_AmpSet(0);
+    FilterType result = FILTER_type_analysis(Learning_Gain_Arry, SWEEP_POINT);
+    return result;
 }
