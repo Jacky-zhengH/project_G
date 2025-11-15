@@ -7,9 +7,13 @@
 #include "main.h"
 #include "gpio.h"
 #include "main.h"
+#include "adc.h"
+#include "dma.h"
+#include "usart.h"
 
 #include "stdint.h"
 #include "stdio.h"
+#include "stdlib.h"
 #include "string.h"
 #include "arm_math.h"
 

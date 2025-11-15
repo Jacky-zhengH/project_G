@@ -18,8 +18,11 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "adc.h"
+#include "dma.h"
+#include "usart.h"
 #include "gpio.h"
-#include "header.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -86,9 +89,18 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
+  MX_ADC1_Init();
+  MX_USART1_UART_Init();
+  MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-  Func_Init();
-  Func_Basic2_SetSignal(1000000);
+  Func_Init(); // 初始化DDS模块
+
+  /* 测试DDS模块最大输出幅值*/
+
+  // AD9833_AmpSet(255);
+  // AD9833_WaveSeting(1000.0,0,SIN_WAVE,0);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */

@@ -23,18 +23,16 @@ project_g\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h
 project_g\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h
 project_g\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h
 project_g\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h
+project_g\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h
+project_g\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h
+project_g\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h
 project_g\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h
 project_g\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h
 project_g\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h
 project_g\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
 project_g\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
+project_g\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+project_g\main.o: ../Core/Inc/adc.h
+project_g\main.o: ../Core/Inc/dma.h
+project_g\main.o: ../Core/Inc/usart.h
 project_g\main.o: ../Core/Inc/gpio.h
-project_g\main.o: ../Driver/header.h
-project_g\main.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-project_g\main.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-project_g\main.o: ../Middlewares/ST/ARM/DSP/Inc/arm_math.h
-project_g\main.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
-project_g\main.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\float.h
-project_g\main.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
-project_g\main.o: ../Driver/ad9833.h
-project_g\main.o: ../Driver/func.h
