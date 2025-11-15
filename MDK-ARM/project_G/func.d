@@ -32,5 +32,9 @@ project_g\func.o: ../Core/Inc/main.h
 project_g\func.o: ../Core/Inc/gpio.h
 project_g\func.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 project_g\func.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+project_g\func.o: ../Middlewares/ST/ARM/DSP/Inc/arm_math.h
+project_g\func.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+project_g\func.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\float.h
+project_g\func.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
 project_g\func.o: ..\Driver\ad9833.h
 project_g\func.o: ..\Driver\func.h

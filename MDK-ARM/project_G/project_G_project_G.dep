@@ -1,7 +1,7 @@
 Dependencies for Project 'project_G', Target 'project_G': (DO NOT MODIFY !)
 CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
 F (startup_stm32f407xx.s)(0x69145520)(--cpu Cortex-M4.fp.sp --pd "__EVAL SETA 1" -g --apcs=interwork -I.\RTE\_project_G-I"D:\Program Files\Keil_v5\packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include"--pd "__UVISION_VERSION SETA 536" --pd "_RTE_ SETA 1" --pd "STM32F407xx SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32f407xx.lst --xref -o project_g\startup_stm32f407xx.o --depend project_g\startup_stm32f407xx.d)
-F (../Core/Src/main.c)(0x691306F1)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Driver -I ../Middlewares/ST/ARM/DSP/Inc-I.\RTE\_project_G-I"D:\Program Files\Keil_v5\packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_PRESENT-o project_g\main.o --omf_browse project_g\main.crf --depend project_g\main.d)
+F (../Core/Src/main.c)(0x6917E9A7)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Driver -I ../Middlewares/ST/ARM/DSP/Inc-I.\RTE\_project_G-I"D:\Program Files\Keil_v5\packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_PRESENT-o project_g\main.o --omf_browse project_g\main.crf --depend project_g\main.d)
 I (../Core/Inc/main.h)(0x691306F1)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x691306DF)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x691306F0)
@@ -31,6 +31,15 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x691306DF
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x691306DF)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x691306DF)
 I (../Core/Inc/gpio.h)(0x691306EE)
+I (../Driver/header.h)(0x691465AD)
+I (D:\Program Files\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60252374)
+I (D:\Program Files\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
+I (../Middlewares/ST/ARM/DSP/Inc/arm_math.h)(0x6911AE54)
+I (D:\Program Files\Keil_v5\ARM\ARMCC\include\math.h)(0x60252378)
+I (D:\Program Files\Keil_v5\ARM\ARMCC\include\float.h)(0x6025237E)
+I (D:\Program Files\Keil_v5\ARM\ARMCC\include\limits.h)(0x60252376)
+I (../Driver/ad9833.h)(0x691356A5)
+I (../Driver/func.h)(0x6917E7E6)
 F (../Core/Src/gpio.c)(0x691306EE)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Driver -I ../Middlewares/ST/ARM/DSP/Inc-I.\RTE\_project_G-I"D:\Program Files\Keil_v5\packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_PRESENT-o project_g\gpio.o --omf_browse project_g\gpio.crf --depend project_g\gpio.d)
 I (../Core/Inc/gpio.h)(0x691306EE)
 I (../Core/Inc/main.h)(0x691306F1)
@@ -512,10 +521,10 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h)(0x691306DF)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x691306DF)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x691306DF)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x691306DF)
-F (..\Driver\header.h)(0x691452BE)()
-F (..\Driver\func.h)(0x691356A4)()
-F (..\Driver\func.c)(0x6913DB3D)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Driver -I ../Middlewares/ST/ARM/DSP/Inc-I.\RTE\_project_G-I"D:\Program Files\Keil_v5\packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_PRESENT-o project_g\func.o --omf_browse project_g\func.crf --depend project_g\func.d)
-I (..\Driver\header.h)(0x691452BE)
+F (..\Driver\header.h)(0x691465AD)()
+F (..\Driver\func.h)(0x6917E7E6)()
+F (..\Driver\func.c)(0x6917ED8E)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Driver -I ../Middlewares/ST/ARM/DSP/Inc-I.\RTE\_project_G-I"D:\Program Files\Keil_v5\packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_PRESENT-o project_g\func.o --omf_browse project_g\func.crf --depend project_g\func.d)
+I (..\Driver\header.h)(0x691465AD)
 I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x691306E0)
 I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x69145660)
 I (../Drivers/CMSIS/Include/core_cm4.h)(0x691306E0)
@@ -547,11 +556,15 @@ I (../Core/Inc/main.h)(0x691306F1)
 I (../Core/Inc/gpio.h)(0x691306EE)
 I (D:\Program Files\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60252374)
 I (D:\Program Files\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
+I (../Middlewares/ST/ARM/DSP/Inc/arm_math.h)(0x6911AE54)
+I (D:\Program Files\Keil_v5\ARM\ARMCC\include\math.h)(0x60252378)
+I (D:\Program Files\Keil_v5\ARM\ARMCC\include\float.h)(0x6025237E)
+I (D:\Program Files\Keil_v5\ARM\ARMCC\include\limits.h)(0x60252376)
 I (..\Driver\ad9833.h)(0x691356A5)
-I (..\Driver\func.h)(0x691356A4)
+I (..\Driver\func.h)(0x6917E7E6)
 F (..\Driver\ad9833.h)(0x691356A5)()
-F (..\Driver\ad9833.c)(0x691356A7)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Driver -I ../Middlewares/ST/ARM/DSP/Inc-I.\RTE\_project_G-I"D:\Program Files\Keil_v5\packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_PRESENT-o project_g\ad9833.o --omf_browse project_g\ad9833.crf --depend project_g\ad9833.d)
-I (..\Driver\header.h)(0x691452BE)
+F (..\Driver\ad9833.c)(0x6917E5A4)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../Driver -I ../Middlewares/ST/ARM/DSP/Inc-I.\RTE\_project_G-I"D:\Program Files\Keil_v5\packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_PRESENT-o project_g\ad9833.o --omf_browse project_g\ad9833.crf --depend project_g\ad9833.d)
+I (..\Driver\header.h)(0x691465AD)
 I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x691306E0)
 I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h)(0x69145660)
 I (../Drivers/CMSIS/Include/core_cm4.h)(0x691306E0)
@@ -583,6 +596,10 @@ I (../Core/Inc/main.h)(0x691306F1)
 I (../Core/Inc/gpio.h)(0x691306EE)
 I (D:\Program Files\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60252374)
 I (D:\Program Files\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
+I (../Middlewares/ST/ARM/DSP/Inc/arm_math.h)(0x6911AE54)
+I (D:\Program Files\Keil_v5\ARM\ARMCC\include\math.h)(0x60252378)
+I (D:\Program Files\Keil_v5\ARM\ARMCC\include\float.h)(0x6025237E)
+I (D:\Program Files\Keil_v5\ARM\ARMCC\include\limits.h)(0x60252376)
 I (..\Driver\ad9833.h)(0x691356A5)
-I (..\Driver\func.h)(0x691356A4)
+I (..\Driver\func.h)(0x6917E7E6)
 F (../Middlewares/ST/ARM/DSP/Lib/arm_cortexM4lf_math.lib)(0x6911AE54)()
