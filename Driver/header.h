@@ -9,6 +9,7 @@
 #include "main.h"
 #include "adc.h"
 #include "dma.h"
+#include "i2c.h"
 #include "usart.h"
 
 #include "stdint.h"
@@ -16,8 +17,12 @@
 #include "stdlib.h"
 #include "string.h"
 #include "arm_math.h"
+#include "stdarg.h"
 
 #include "ad9833.h"
 #include "func.h"
+#include "process.h"
+#include "MAX262.h"
+#include "SI5351.h"
 
 #endif

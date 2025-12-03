@@ -29,13 +29,18 @@ project_g\process.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h
 project_g\process.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h
 project_g\process.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h
 project_g\process.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h
+project_g\process.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h
+project_g\process.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h
 project_g\process.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
 project_g\process.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
+project_g\process.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
+project_g\process.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 project_g\process.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 project_g\process.o: ../Core/Inc/main.h
 project_g\process.o: ../Core/Inc/gpio.h
 project_g\process.o: ../Core/Inc/adc.h
 project_g\process.o: ../Core/Inc/dma.h
+project_g\process.o: ../Core/Inc/i2c.h
 project_g\process.o: ../Core/Inc/usart.h
 project_g\process.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 project_g\process.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
@@ -44,5 +49,10 @@ project_g\process.o: ../Middlewares/ST/ARM/DSP/Inc/arm_math.h
 project_g\process.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 project_g\process.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\float.h
 project_g\process.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+project_g\process.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 project_g\process.o: ..\Driver\ad9833.h
 project_g\process.o: ..\Driver\func.h
+project_g\process.o: ..\Driver\process.h
+project_g\process.o: ..\Driver\MAX262.h
+project_g\process.o: ..\Driver\SI5351.h
+project_g\process.o: D:\Program Files\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h

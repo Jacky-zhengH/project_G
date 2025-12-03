@@ -34,8 +34,8 @@
 /* USER CODE END 1 */
 
 /**
- * Enable DMA controller clock
- */
+  * Enable DMA controller clock
+  */
 void MX_DMA_Init(void)
 {
 
@@ -49,8 +49,10 @@ void MX_DMA_Init(void)
   /* DMA2_Stream2_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA2_Stream2_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(DMA2_Stream2_IRQn);
+
 }
 
 /* USER CODE BEGIN 2 */
 
 /* USER CODE END 2 */
+

@@ -12,8 +12,14 @@ typedef enum
 
 void Func_Init(void);
 void Func_Stop_All_Output(void);
+void LED_Debug(int state);
 void Func_Basic2_SetSignal(float frequency);
 void Func_Basic3_4_SetSignal(float frequency, float target_model_output_vpp);
-FilterType Fun_Advanced1_StratLearning(void);
+FilterType Func_Advanced1_StratLearning(void);
+void Func2_Advanced2_Imitate(void);
+/*全局变量申明*/
+extern FilterType G_Learned_Type;
+extern float G_Learned_Fc;
+extern float G_Learned_Q;
 
 #endif

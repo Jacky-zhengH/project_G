@@ -1,6 +1,11 @@
 {
     "files.associations": {
         "stdio.h": "c",
-        "usart.h": "c"
+        "usart.h": "c",
+        "ad9833.h": "c",
+        "stm32f4xx.h": "c",
+        "header.h": "c",
+        "max262.h": "c",
+        "tim.h": "c"
     }
 }
